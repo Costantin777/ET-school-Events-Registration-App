@@ -1,0 +1,108 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  margin-left: 4rem;
+}
+
+#events-list {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* Адаптивність кількості колонок */
+  gap: 2rem;
+  padding: 1.5rem;
+  margin: 0 auto;
+  max-width: 1200px; /* Додаємо максимальну ширину */
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.event-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.event-details a {
+  text-decoration: none;
+  color: #4e84be;
+}
+
+#events-list .event {
+  border: 1px solid #000;
+  padding: 1.5rem;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Додаємо тінь для кращого вигляду */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#events-list .event:hover {
+  transform: translateY(-5px); /* Додаємо ефект при наведенні */
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#pagination {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+#pagination ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#pagination li {
+  display: inline;
+  margin: 0 0.5rem;
+}
+
+#pagination a {
+  text-decoration: none;
+  color: #007bff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#pagination a:hover {
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+}
+
+/* Додаємо медіа-запити для адаптивності */
+@media (max-width: 768px) {
+  h1 {
+    margin-left: 2rem;
+  }
+
+  #events-list {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(200px, 1fr)
+    ); /* Змінюємо колонки для планшетів */
+    gap: 1.5rem;
+  }
+
+  #pagination {
+    position: static;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #events-list {
+    grid-template-columns: 1fr; /* Одноколонкова сітка для мобільних пристроїв */
+    gap: 1rem;
+  }
+
+  h1 {
+    margin-left: 1rem;
+  }
+}

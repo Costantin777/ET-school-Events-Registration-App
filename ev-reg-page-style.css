@@ -1,0 +1,71 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#container {
+  margin: 3rem auto;
+  max-width: 800px; /* Обмежуємо максимальну ширину для великих екранів */
+  padding: 1rem;
+}
+
+form {
+  font-size: 1.5rem; /* Використовуємо відносні одиниці для гнучкості */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  width: 100%; /* Зробимо поля шириною 100%, щоб виглядало більш адаптивно */
+  box-sizing: border-box; /* Це гарантує, що padding включається у розміри елемента */
+  margin-bottom: 1rem;
+}
+
+input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+#container-question {
+  display: flex;
+  flex-wrap: wrap; /* Додаємо гнучкість для маленьких екранів */
+  margin-top: 1.5rem;
+  gap: 2rem;
+}
+
+input[type="submit"] {
+  font-size: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Додаємо медіа-запити для адаптивності */
+@media (max-width: 600px) {
+  #container {
+    margin: 1rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  textarea {
+    font-size: 1.2rem;
+  }
+
+  form {
+    font-size: 1.2rem;
+  }
+
+  #container-question {
+    flex-direction: column; /* На маленьких екранах елементи розташуються вертикально */
+    gap: 1rem;
+  }
+}
